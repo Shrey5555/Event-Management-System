@@ -22,26 +22,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="~/NewHome/About">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="~/NewHome/Contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/Identity/Account/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/Identity/Account/Register">Register</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="~/NewHome/About">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="~/NewHome/Contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Identity/Account/Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Identity/Account/Register">Register</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -55,25 +51,22 @@
     </div>
     <div class="container text-white">
         <h2 class="text-center">Featured Events</h2>
-        <div class="card-deck">
-            <div class="row">
-                @foreach (var featuredEvent in Model)
-                {
-                    <div class="col-md-4 mb-3">
-                        <a href="/NewHome/BrowseEvent" class="card rounded border-2 border-secondary">
-                            <div class="card-body text-center" style="background-color: #3498db; height:160px;">
-                                <div class="card-title text-white h4 mt-4">@featuredEvent.EventName</div>
-                                <div class="card-text text-white text-left">@featuredEvent.Description</div>
-                            </div>
-                        </a>
-                    </div>
-                }
-            </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            @foreach (var featuredEvent in Model)
+            {
+                <div class="col">
+                    <a href="/NewHome/BrowseEvent" class="card rounded border-2 border-secondary h-100">
+                        <div class="card-body text-center" style="background-color: #3498db;">
+                            <div class="card-title text-white h4 mt-4">@featuredEvent.EventName</div>
+                            <div class="card-text text-white text-left">@featuredEvent.Description</div>
+                        </div>
+                    </a>
+                </div>
+            }
         </div>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
-
 </html>
